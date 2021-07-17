@@ -1,7 +1,7 @@
 export const menuList = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Property", path: "/property" },
-    { name: "Our blog", path: "/blog" },
-    { name: "Contacts", path: "/contacts" },
+    { name: "Электронный бланк ПТД", path: "/form" },
+    { name: "Памятка путешественника", path: "/guide" },
+    { name: "Информация", path: "/info" },
+    { name: "Вопросы и поддержка", path: "/faq" },
+    { name: "Личный кабинет", path: "/cabinet" },
 ]
