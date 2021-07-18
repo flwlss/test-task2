@@ -6,11 +6,11 @@
     <p class="index-title">Без регистрации</p>
     <p class="index-text">Введите адрес электронной почты</p>
     <input class="index-input" type="email" placeholder="Введите email" />
-    <a class="index-continue" href="">Продолжить</a>
-    <a class="index-login" href="#">Вход через Госуслуги</a>
-    <!-- сМЕНИТЬ ШРИФТ -->
-    <!-- сМЕНИТЬ ШРИФТ -->
-    <!-- сМЕНИТЬ ШРИФТ -->
-    <!-- сМЕНИТЬ ШРИФТ -->
+    <a class="index-continue" href="/confirm">Продолжить</a>
+    <a class="index-login" href="">Вход через Госуслуги</a>
   </div>
 </template>
+
+<script>
+
+</script>

@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 .index{
     height: 90vh;
     width: 100%;
     display: flex;
-    //justify-content: center;
     flex-direction: column;
     align-items: center;
-   // background-color: aqua;
 }
 .index-circle {
     width: 120px;
@@ -25,16 +24,26 @@
     font-size: 36px;
     line-height: 44px;
     margin-top: 30px;
+    font-weight: 600;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
 }
 .index-text{
+    width: 495px;
     margin: 0;
     padding: 0;
     font-size: 24px;
     line-height: 29px;
     color: $onyx;
     margin-top: 10px;
+    font-weight: 400;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
 }
-.index-input{
+.index-input, .index-inputs{
     width: 350px;
     height: 50px;
     border: 1px solid #9B9B9B;
@@ -45,6 +54,19 @@
     font-size: 18px;
     line-height: 22px;
     min-height: 50px;
+    font-weight: 400;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+
+    &.index-inputs{
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+        min-height: 50px;
+        text-align: center;
+        padding-left: 0;
+    }
 }
 .index-continue{
     width: 350px;
@@ -58,8 +80,11 @@
     justify-content: center;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 600;
     min-height: 50px;
+    font-weight: 600;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
 }
 .index-login{
     margin: 0;
@@ -69,4 +94,12 @@
     color: $onyx;
     margin-top: 25px;
     padding-bottom: 20vh;
+    font-weight: 400;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+}
+.index-wrapper{
+    display: flex;
+    margin-right: 20px;
 }

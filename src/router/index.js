@@ -35,6 +35,11 @@ const routes = [
     name: 'Cabinet',
     component: () => import(/* webpackChunkName: "cabinet" */ '../views/Cabinet.vue'),
   },
+  {
+    path: '/confirm',
+    name: 'Confirm',
+    component: () => import(/* webpackChunkName: "cabinet" */ '../components/Confirm.vue'),
+  },
 ]
 
 const router = createRouter({
