@@ -18,7 +18,13 @@
 </template>
 
 <script>
-import { menuList } from "../constants/menuLinks";
+const menuList = [
+  { name: "Электронный бланк ПТД", path: "/form" },
+  { name: "Памятка путешественника", path: "/guide" },
+  { name: "Информация", path: "/info" },
+  { name: "Вопросы и поддержка", path: "/faq" },
+  { name: "Личный кабинет", path: "/cabinet" },
+];
 
 export default {
   name: "Header",
@@ -30,7 +36,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>
