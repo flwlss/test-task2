@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 .index{
     height: 90vh;
     width: 100%;
@@ -17,6 +16,9 @@
     margin-top: 20vh;
     min-height: 120px;
 }
+.index-check{
+    margin-top: 20vh;
+}
 .index-title{
     margin: 0;
     padding: 0;
@@ -24,12 +26,8 @@
     font-size: 36px;
     line-height: 44px;
     margin-top: 30px;
-    font-weight: 600;
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
 }
-.index-text{
+.index-text {
     width: 495px;
     margin: 0;
     padding: 0;
@@ -37,10 +35,6 @@
     line-height: 29px;
     color: $onyx;
     margin-top: 10px;
-    font-weight: 400;
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
     text-align: center;
 }
 .index-input, .index-inputs{
@@ -54,10 +48,6 @@
     font-size: 18px;
     line-height: 22px;
     min-height: 50px;
-    font-weight: 400;
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
 
     &.index-inputs{
         width: 50px;
@@ -68,10 +58,10 @@
         padding-left: 0;
     }
 }
-.index-continue{
+.disabled-btn, .enabled-btn{
     width: 350px;
     height: 50px;
-    background-color: $green;
+    background-color: grey;
     border-radius: 5px;
     margin-top: 20px;
     color: $white;
@@ -81,10 +71,11 @@
     font-size: 18px;
     line-height: 22px;
     min-height: 50px;
-    font-weight: 600;
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
+
+    &.enabled-btn {
+        background: #25B887;
+        cursor: pointer;
+    }
 }
 .index-login{
     margin: 0;
@@ -94,12 +85,9 @@
     color: $onyx;
     margin-top: 25px;
     padding-bottom: 20vh;
-    font-weight: 400;
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
 }
 .index-wrapper{
     display: flex;
     margin-right: 20px;
+    text-align: center;
 }

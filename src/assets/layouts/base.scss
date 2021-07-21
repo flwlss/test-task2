@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 li {
     text-decoration: none;
     list-style: none;
@@ -9,6 +9,12 @@ a {
 body {
     margin: 0;
     padding: 0;
-    background-color: #E5E5E5;
+    background-color: $white;
     min-width: 700px;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+}
+button, input {
+    font-family: PT Sans;
 }

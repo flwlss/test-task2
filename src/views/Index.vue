@@ -6,17 +6,22 @@
     <p class="index-title">Без регистрации</p>
     <p class="index-text">Введите адрес электронной почты</p>
 
-    <form id="app" @submit="checkForm" action="/confirm">
+    <form action="/confirm">
       <input
         class="index-input"
         type="email"
-        name="name"
-        v-model="name"
+        v-model="email"
         placeholder="Введите email"
       />
-      <input type="submit" value="Продолжить" class="index-continue" />
+      <button
+        type="submit"
+        :disabled="isValidEmail"
+        class="disabled-btn"
+        :class="{ 'enabled-btn': !isValidEmail }"
+      >
+        Продолжить
+      </button>
     </form>
-
     <a class="index-login" href="">Вход через Госуслуги</a>
   </div>
 </template>
@@ -25,15 +30,17 @@
 export default {
   data() {
     return {
-      name: null,
+      email: null,
     };
   },
-  methods: {
-    checkForm: function (e) {
-      if (this.name) return true;
-      if (!this.name) alert("Введите email");
-      e.preventDefault();
+  computed: {
+    isValidEmail() {
+      return !this.email;
     },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>
