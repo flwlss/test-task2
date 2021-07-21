@@ -1,32 +1,27 @@
-.nav {
+.header {
     width: 100%;
     height: 90px;
     background-color: #0F7A65;
 }
 .container {
-    padding-left: 20.3%;
-    padding-right: 20.4%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
-.nav-align{
+.header-align {
     display: flex;
-    align-items: center;
-    height: 90px;
+    justify-content: space-around;
 }
-.nav-wrapper{
-    width: 100%;
+.header-logo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    margin-right: 3vw;
 }
-.nav-logo {
-    width: 59px;
-    height: 72px;
-}
-.nav-item a{
+.header-item a{
     color: $white;
     font-size: 18px;
     line-height: 23px;
     display: flex;
     align-items: center;
+    height: 90px;
+    margin-right: 3vw;
+    white-space: nowrap;   
 }
