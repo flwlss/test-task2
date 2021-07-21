@@ -3,17 +3,16 @@
     height: 90px;
     background-color: #0F7A65;
 }
-.container {
+.header-align {
     padding-left: 20%;
     padding-right: 20%;
-}
-.header-align {
     display: flex;
     justify-content: space-around;
 }
 .header-logo {
     display: flex;
     margin-right: 3vw;
+    margin-left: 3vw;
 }
 .header-item a{
     color: $white;

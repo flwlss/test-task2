@@ -1,18 +1,12 @@
 <template>
   <div class="header">
-    <div class="container">
-      <div class="header-align">
-        <a class="header-logo" href="/">
-          <img alt="logo" src="../assets/logo.svg"
-        /></a>
-        <li
-          class="header-item"
-          v-for="(menu, index) in headerList"
-          :key="index"
-        >
-          <router-link :to="menu.path">{{ menu.name }}</router-link>
-        </li>
-      </div>
+    <div class="header-align">
+      <a class="header-logo" href="/">
+        <img alt="logo" src="../assets/logo.svg"
+      /></a>
+      <li class="header-item" v-for="(menu, index) in headerList" :key="index">
+        <router-link :to="menu.path">{{ menu.name }}</router-link>
+      </li>
     </div>
   </div>
 </template>
