@@ -15,9 +15,9 @@
       />
       <button
         type="submit"
-        :disabled="isValidEmail"
+        :disabled="validateInput"
         class="disabled-btn"
-        :class="{ 'enabled-btn': !isValidEmail }"
+        :class="{ 'enabled-btn': !validateInput }"
       >
         Продолжить
       </button>
@@ -34,13 +34,9 @@ export default {
     };
   },
   computed: {
-    isValidEmail() {
+    validateInput() {
       return !this.email;
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

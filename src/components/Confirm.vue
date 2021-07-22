@@ -11,27 +11,34 @@
       <form v-if="check === true" action="/confirmed">
         <input
           autofocus
+          id="1"
           v-model="pin['n1']"
           class="index-inputs"
           type="text"
           maxlength="1"
           :onkeypress="isValidNum"
+          :onkeyup="focusOnTwo"
         />
         <input
+          id="2"
           v-model="pin['n2']"
           class="index-inputs"
           type="text"
           maxlength="1"
           :onkeypress="isValidNum"
+          :onkeyup="focusOnThree"
         />
         <input
+          id="3"
           v-model="pin['n3']"
           class="index-inputs"
           type="text"
           maxlength="1"
           :onkeypress="isValidNum"
+          :onkeyup="focusOnFour"
         />
         <input
+          id="4"
           v-model="pin['n4']"
           class="index-inputs"
           type="text"
@@ -95,9 +102,21 @@ export default {
       if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
       return true;
     },
+    focusOnTwo() {
+      if (this.pin.n1) {
+        document.getElementById("2").focus();
+      }
+    },
+    focusOnThree() {
+      if (this.pin.n2) {
+        document.getElementById("3").focus();
+      }
+    },
+    focusOnFour() {
+      if (this.pin.n3) {
+        document.getElementById("4").focus();
+      }
+    },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
