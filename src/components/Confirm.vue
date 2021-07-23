@@ -1,17 +1,17 @@
 <template>
   <div class="index">
     <div class="index-circle">
-      <img alt="index-logo" src="../assets/mail.svg" />
+      <img alt="index-logo" :src="require('@/assets/img/mail.svg')" />
     </div>
     <p class="index-title">Подтверждение</p>
-    <p v-if="check === true" class="index-text">
+    <p v-if="check" class="index-text">
       На Ваш электронный адрес был выслан код, введите его ниже
     </p>
     <div class="index-wrapper">
-      <form v-if="check === true" action="/confirmed">
+      <form v-if="check" action="/confirmed">
         <input
           autofocus
-          id="1"
+          id="inputPin1"
           v-model="pin['n1']"
           class="index-inputs"
           type="text"
@@ -20,7 +20,7 @@
           :onkeyup="focusOnTwo"
         />
         <input
-          id="2"
+          id="inputPin2"
           v-model="pin['n2']"
           class="index-inputs"
           type="text"
@@ -29,7 +29,7 @@
           :onkeyup="focusOnThree"
         />
         <input
-          id="3"
+          id="inputPin3"
           v-model="pin['n3']"
           class="index-inputs"
           type="text"
@@ -38,7 +38,7 @@
           :onkeyup="focusOnFour"
         />
         <input
-          id="4"
+          id="inputPin4"
           v-model="pin['n4']"
           class="index-inputs"
           type="text"
@@ -46,9 +46,9 @@
           :onkeypress="isValidNum"
         />
         <button
-          :class="{ 'enabled-btn': validateInput }"
-          @click="validate_pin"
-          :disabled="!validateInput"
+          :class="{ 'enabled-btn': isValidInput }"
+          @click="checkPin"
+          :disabled="!isValidInput"
           class="disabled-btn"
         >
           Продолжить
@@ -81,40 +81,42 @@ export default {
     getPin() {
       return this.pin.n1 + this.pin.n2 + this.pin.n3 + this.pin.n4;
     },
-    validateInput() {
+    isValidInput() {
       return this.pin.n1 && this.pin.n2 && this.pin.n3 && this.pin.n4;
     },
-    pin_is_valid() {
+    isValidPin() {
       return this.getPin === "1234";
     },
   },
   props: {},
   methods: {
-    validate_pin() {
-      if (this.pin_is_valid) {
+    checkPin() {
+      if (this.isValidPin) {
         return this.check;
       } else {
         this.check = false;
       }
     },
     isValidNum(evt) {
-      var charCode = evt.which ? evt.which : event.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-      return true;
+      // Проверяет, что введенный символ является числовым
+      let charCode = evt.which ? evt.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+      }
     },
     focusOnTwo() {
       if (this.pin.n1) {
-        document.getElementById("2").focus();
+        document.getElementById("inputPin2").focus();
       }
     },
     focusOnThree() {
       if (this.pin.n2) {
-        document.getElementById("3").focus();
+        document.getElementById("inputPin3").focus();
       }
     },
     focusOnFour() {
       if (this.pin.n3) {
-        document.getElementById("4").focus();
+        document.getElementById("inputPin4").focus();
       }
     },
   },

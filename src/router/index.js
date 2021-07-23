@@ -10,14 +10,11 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Form.vue'),
+    component: () => import(/* webpackChunkName: "form" */ '../views/Form.vue'),
   },
   {
     path: '/guide',
     name: 'Guide',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "guide" */ '../views/Guide.vue'),
   },
   {
@@ -38,12 +35,12 @@ const routes = [
   {
     path: '/confirm',
     name: 'Confirm',
-    component: () => import(/* webpackChunkName: "cabinet" */ '../components/Confirm.vue'),
+    component: () => import(/* webpackChunkName: "confirm" */ '../components/Confirm.vue'),
   },
   {
     path: '/confirmed',
     name: 'Confirmed',
-    component: () => import(/* webpackChunkName: "cabinet" */ '../components/Confirmed.vue'),
+    component: () => import(/* webpackChunkName: "confirmed" */ '../components/Confirmed.vue'),
   },
 ]
 
