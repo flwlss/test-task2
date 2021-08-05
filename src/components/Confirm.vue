@@ -1,14 +1,15 @@
 <template>
   <div class="index">
-    <div class="index-circle">
-      <img alt="index-logo" :src="require('@/assets/img/mail.svg')" />
+    <div class="index__circle">
+      <img alt="index__logo" :src="require('@/assets/img/mail.svg')" />
     </div>
-    <p class="index-title">Подтверждение</p>
-    <p v-if="check" class="index-text">
+    <p class="index__title">Подтверждение</p>
+    <p v-if="check" class="index__text">
       На Ваш электронный адрес был выслан код, введите его ниже
     </p>
-    <div class="index-wrapper">
-      <form v-if="check" action="/confirmed">
+    <div class="index__wrapper">
+      <!-- добавить неверный пароль -->
+      <div v-if="check">
         <input
           autofocus
           id="inputPin1"
@@ -53,13 +54,14 @@
         >
           Продолжить
         </button>
-      </form>
+      </div>
+      <!-- убрать вторую форму -->
       <form v-else action="">
         <div class="index-error">Неверный пароль</div>
         <button class="enabled-btn">Вернуться</button>
       </form>
     </div>
-    <a class="index-login" href="">Выслать код повторно</a>
+    <a class="index__login" href="">Выслать код повторно</a>
   </div>
 </template>
 
@@ -92,7 +94,7 @@ export default {
   methods: {
     checkPin() {
       if (this.isValidPin) {
-        return this.check;
+        this.$router.push("/confirmed");
       } else {
         this.check = false;
       }
@@ -104,6 +106,7 @@ export default {
         return false;
       }
     },
+    // сделать один метод
     focusOnTwo() {
       if (this.pin.n1) {
         document.getElementById("inputPin2").focus();

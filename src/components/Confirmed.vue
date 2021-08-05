@@ -1,10 +1,10 @@
 <template>
   <div class="index">
-    <div class="index-check">
-      <img alt="index-logo" :src="require('@/assets/img/check.svg')" />
+    <div class="index__check">
+      <img alt="index__logo" :src="require('@/assets/img/check.svg')" />
     </div>
-    <p class="index-title">Почта подтверждена!</p>
-    <p class="index-text">
+    <p class="index__title">Почта подтверждена!</p>
+    <p class="index__text">
       На Ваш электронный адрес выслан бланк пассажирской таможенной декларации и
       штрих-код для доступа к быстрой печати с сенсорного терминала
     </p>
@@ -21,6 +21,7 @@ export default {
     return {};
   },
   methods: {
+    // взять из индекса
     toIndex() {
       this.$router.push("/");
     },

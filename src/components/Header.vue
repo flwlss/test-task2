@@ -1,10 +1,10 @@
 <template>
   <div class="header">
-    <div class="header-align">
-      <a class="header-logo" href="/">
+    <div class="header__align">
+      <a class="header__logo" @click="toIndex">
         <img alt="logo" :src="require('@/assets/img/logo.svg')"
       /></a>
-      <li class="header-item" v-for="(menu, index) in headerList" :key="index">
+      <li class="header__item" v-for="(menu, index) in headerList" :key="index">
         <router-link :to="menu.path">{{ menu.name }}</router-link>
       </li>
     </div>
@@ -25,6 +25,11 @@ export default {
         { name: "Личный кабинет", path: "/cabinet" },
       ],
     };
+  },
+  methods: {
+    toIndex() {
+      this.$router.push("/");
+    },
   },
 };
 </script>

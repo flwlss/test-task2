@@ -5,36 +5,54 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.index-circle {
-    width: 120px;
-    height: 120px;
-    background: $green;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    min-height: 120px;
+
+
+    &__circle {
+        width: 120px;
+        height: 120px;
+        background: $green;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        min-height: 120px;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        color: $black;
+        font-size: 36px;
+        line-height: 44px;
+        margin-top: 3vh;
+    }
+
+    &__text{
+        width: 495px;
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        line-height: 29px;
+        color: $onyx;
+        margin-top: 1vh;
+        text-align: center;
+    }
+
+    &__login {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        line-height: 22px;
+        color: $onyx;
+        margin-top: 2.5vh;
+    }
+
+    &__wrapper {
+        display: flex;
+        text-align: center;
+    }
 }
 
-.index-title{
-    margin: 0;
-    padding: 0;
-    color: $black;
-    font-size: 36px;
-    line-height: 44px;
-    margin-top: 3vh;
-}
-.index-text {
-    width: 495px;
-    margin: 0;
-    padding: 0;
-    font-size: 24px;
-    line-height: 29px;
-    color: $onyx;
-    margin-top: 1vh;
-    text-align: center;
-}
 .index-input, .index-inputs{
     width: 350px;
     height: 50px;
@@ -74,18 +92,6 @@
         background: #25B887;
         cursor: pointer;
     }
-}
-.index-login{
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 22px;
-    color: $onyx;
-    margin-top: 2.5vh;
-}
-.index-wrapper{
-    display: flex;
-    text-align: center;
 }
 .index-error {
     margin: 0;
