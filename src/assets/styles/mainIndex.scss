@@ -48,11 +48,31 @@
     }
 
     &__wrapper {
-        display: flex;
+        text-align: center;
+    }
+
+    &__error {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 29px;
+        color:#e2001f;
+        margin-top: 10px;
         text-align: center;
     }
 }
-
+.error-input{
+    width: 200px;
+    height: 50px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 5vh;
+    padding-left: 15px;
+    font-size: 18px;
+    line-height: 22px;
+    min-height: 50px;
+}
 .index-input, .index-inputs{
     width: 350px;
     height: 50px;
@@ -92,13 +112,4 @@
         background: #25B887;
         cursor: pointer;
     }
-}
-.index-error {
-    margin: 0;
-    padding: 0;
-    font-size: 24px;
-    line-height: 29px;
-    color: $onyx;
-    margin-top: 10px;
-    text-align: center;
 }

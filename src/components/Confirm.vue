@@ -4,62 +4,55 @@
       <img alt="index__logo" :src="require('@/assets/img/mail.svg')" />
     </div>
     <p class="index__title">Подтверждение</p>
-    <p v-if="check" class="index__text">
+    <p class="index__text">
       На Ваш электронный адрес был выслан код, введите его ниже
     </p>
     <div class="index__wrapper">
-      <!-- добавить неверный пароль -->
-      <div v-if="check">
-        <input
-          autofocus
-          id="inputPin1"
-          v-model="pin['n1']"
-          class="index-inputs"
-          type="text"
-          maxlength="1"
-          :onkeypress="isValidNum"
-          :onkeyup="focusOnTwo"
-        />
-        <input
-          id="inputPin2"
-          v-model="pin['n2']"
-          class="index-inputs"
-          type="text"
-          maxlength="1"
-          :onkeypress="isValidNum"
-          :onkeyup="focusOnThree"
-        />
-        <input
-          id="inputPin3"
-          v-model="pin['n3']"
-          class="index-inputs"
-          type="text"
-          maxlength="1"
-          :onkeypress="isValidNum"
-          :onkeyup="focusOnFour"
-        />
-        <input
-          id="inputPin4"
-          v-model="pin['n4']"
-          class="index-inputs"
-          type="text"
-          maxlength="1"
-          :onkeypress="isValidNum"
-        />
-        <button
-          :class="{ 'enabled-btn': isValidInput }"
-          @click="checkPin"
-          :disabled="!isValidInput"
-          class="disabled-btn"
-        >
-          Продолжить
-        </button>
-      </div>
-      <!-- убрать вторую форму -->
-      <form v-else action="">
-        <div class="index-error">Неверный пароль</div>
-        <button class="enabled-btn">Вернуться</button>
-      </form>
+      <input
+        autofocus
+        id="inputPin1"
+        v-model="pin['n1']"
+        class="index-inputs"
+        type="text"
+        maxlength="1"
+        :onkeypress="isValidNum"
+        :onkeyup="focusOnTwo"
+      />
+      <input
+        id="inputPin2"
+        v-model="pin['n2']"
+        class="index-inputs"
+        type="text"
+        maxlength="1"
+        :onkeypress="isValidNum"
+        :onkeyup="focusOnThree"
+      />
+      <input
+        id="inputPin3"
+        v-model="pin['n3']"
+        class="index-inputs"
+        type="text"
+        maxlength="1"
+        :onkeypress="isValidNum"
+        :onkeyup="focusOnFour"
+      />
+      <input
+        id="inputPin4"
+        v-model="pin['n4']"
+        class="index-inputs"
+        type="text"
+        maxlength="1"
+        :onkeypress="isValidNum"
+      />
+      <div class="index__error" v-if="this.pinCheck">Неверный пин-код</div>
+      <button
+        :class="{ 'enabled-btn': isValidInput }"
+        @click="toConfirmed"
+        :disabled="!isValidInput"
+        class="disabled-btn"
+      >
+        Продолжить
+      </button>
     </div>
     <a class="index__login" href="">Выслать код повторно</a>
   </div>
@@ -76,7 +69,7 @@ export default {
         n3: "",
         n4: "",
       },
-      check: true,
+      pinCheck: false,
     };
   },
   computed: {
@@ -92,11 +85,16 @@ export default {
   },
   props: {},
   methods: {
-    checkPin() {
+    toConfirmed() {
       if (this.isValidPin) {
         this.$router.push("/confirmed");
       } else {
-        this.check = false;
+        this.pinCheck = true;
+        this.pin.n1 = "";
+        this.pin.n2 = "";
+        this.pin.n3 = "";
+        this.pin.n4 = "";
+        document.getElementById("inputPin1").focus();
       }
     },
     isValidNum(evt) {

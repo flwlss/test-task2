@@ -6,8 +6,16 @@
     <p class="index__title">Без регистрации</p>
     <p class="index__text">Введите адрес электронной почты</p>
 
-    <input class="index-input" v-model="email" placeholder="Введите email" />
-  <!-- добавить неверный мейл -->
+    <input
+      autofocus
+      class="index-input"
+      v-model="email"
+      placeholder="Введите email"
+      id="inputMail"
+      type="search"
+    />
+    <span class="index__error" v-if="this.emailCheck">Неверный email</span>
+
     <button
       type="submit"
       :disabled="isValidInput"
@@ -27,6 +35,7 @@ export default {
   data() {
     return {
       email: null,
+      emailCheck: false,
     };
   },
   computed: {
@@ -35,7 +44,7 @@ export default {
     },
     isValidMail() {
       return this.email.includes("@");
-      // добавить фильтр по символам
+      // добавить фильтр по остальным символам
     },
   },
   methods: {
@@ -43,8 +52,8 @@ export default {
       if (!this.isValidInput && this.isValidMail) {
         this.$router.push("/confirm");
       } else {
-        alert("pas");
-        // сделать вывод неверного мейла
+        this.emailCheck = true;
+        document.getElementById("inputMail").focus();
       }
     },
   },
