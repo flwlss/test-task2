@@ -60,7 +60,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "Confirm",
   data() {
     return {
       pin: {
