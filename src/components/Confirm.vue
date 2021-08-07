@@ -9,7 +9,6 @@
     </p>
     <div class="index__wrapper">
       <input
-        autofocus
         id="inputPin1"
         v-model="pin['n1']"
         class="index-inputs"
@@ -120,6 +119,9 @@ export default {
         document.getElementById("inputPin4").focus();
       }
     },
+  },
+  mounted() {
+    document.getElementById("inputPin1").focus();
   },
 };
 </script>
